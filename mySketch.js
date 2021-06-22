@@ -12,6 +12,7 @@ function draw() {
 	PURPLELINE();
 	BLUELINE();
 	NAME();
+	ERASER();
 }
 
 function NAME() {// custom function
@@ -40,10 +41,10 @@ function RECTANGLE() { // custom function
   fill(int(random(256)),int(random(256)),int(random(256))); // random RGB colour between 0 and 255 for all values  for the fill colour.
 	if (keyIsPressed) { // When the mouse is pressed, a rectangle with a width and height of 20 appears.
 		if (keyCode == 38) {
-	rect(mouseX, mouseY-10, 20, 20); // the rectangle will appear 20 pixels horizontally from the cursor and -10 pixels vertically from the cursor.
+	rect(mouseX, mouseY-10, 20, 20); // the rectangle will appear 20 pixels horizontally from the cursor and -10 pixels vertically from the cursor
+			}
+		}
 	}
-}
-}
 }
 
 function PURPLELINE() {
@@ -69,4 +70,15 @@ function BLUELINE() {
 	stroke(0);
 	strokeWeight(10);
 	line(windowWidth/2, windowHeight/2, windowWidth, windowHeight/2);
+}
+
+function ERASER() {
+stroke(255); 
+		strokeWeight(10);
+	fill(255);
+	if (keyIsPressed) {
+		if (keyCode == 37){
+		ellipse(mouseX, mouseY, 100, 100); // erases all drawings
+		}
+	}
 }
